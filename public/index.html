@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Inventory Management System</title>
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%232a78d6' stroke-width='2' stroke-linejoin='round'><path d='M21 8 12 3 3 8v8l9 5 9-5z'/><path d='m3 8 9 5 9-5M12 13v8'/></svg>">
+  <link rel="stylesheet" href="/css/app.css">
+  <script>
+    try { const t = localStorage.getItem('ims-theme'); if (t) document.documentElement.dataset.theme = t; } catch {}
+  </script>
+</head>
+<body>
+  <div class="app">
+    <aside class="sidebar" id="sidebar">
+      <div class="brand">
+        <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round" aria-hidden="true"><path d="M21 8 12 3 3 8v8l9 5 9-5z"/><path d="m3 8 9 5 9-5M12 13v8"/></svg>
+        <span>StockKeeper</span>
+      </div>
+      <nav id="nav" aria-label="Main"></nav>
+      <div class="sidebar-foot">Inventory Management System</div>
+    </aside>
+    <div class="main">
+      <header class="topbar">
+        <button class="icon-btn menu-btn" id="menu-btn" aria-label="Open menu"></button>
+        <h1 id="page-title">Dashboard</h1>
+        <div class="topbar-actions">
+          <div class="alerts-wrap">
+            <button class="icon-btn" id="alerts-btn" aria-label="Low-stock alerts" aria-haspopup="true" aria-expanded="false"></button>
+            <div class="alerts-panel" id="alerts-panel" hidden></div>
+          </div>
+          <button class="icon-btn" id="theme-btn" aria-label="Toggle dark mode"></button>
+        </div>
+      </header>
+      <main id="view" tabindex="-1"></main>
+    </div>
+  </div>
+  <div id="modal-root"></div>
+  <div id="toasts" class="toasts"></div>
+
+  <script src="/vendor/chart.js/chart.umd.min.js"></script>
+  <script src="/vendor/jspdf/jspdf.umd.min.js"></script>
+  <script src="/vendor/jspdf-autotable/jspdf.plugin.autotable.min.js"></script>
+  <script type="module" src="/js/app.js"></script>
+</body>
+</html>
